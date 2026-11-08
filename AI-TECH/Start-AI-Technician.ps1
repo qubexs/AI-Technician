@@ -30,7 +30,7 @@ if (-not (Test-Path $modelPath)) {
     exit 1
 }
 
-Write-Host "Starting Crouton Alpha with model: $modelPath" -ForegroundColor Green
+Write-Host "Starting AI Technician with model: $modelPath" -ForegroundColor Green
 
 $llamaExe = "$base\llama\llama-server.exe"
 if (-not (Test-Path $llamaExe)) { $llamaExe = "$base\llama\llama-cli.exe" }

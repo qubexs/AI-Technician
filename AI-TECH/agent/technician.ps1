@@ -1,4 +1,4 @@
-# technician.ps1 - Chat loop for Crouton Alpha
+# technician.ps1 - Chat loop for AI Technician
 param([string]$SettingsPath = "..\config\settings.json", [string]$Port = "8080", [string]$HostAddr = "127.0.0.1")
 
 . "$PSScriptRoot\tools.ps1"
@@ -8,15 +8,15 @@ $systemPrompt = Get-Content "$PSScriptRoot\system_prompt.txt" -Raw
 
 $messages = @(
     @{ role="system"; content=$systemPrompt }
-    @{ role="assistant"; content="Hello, I am Crouton Alpha your offline PC Technician. Describe the problem: slow, blue screen, no boot, error message? I will diagnose with offline tools." }
+    @{ role="assistant"; content="Hello, I am AI Technician your offline PC Technician. Describe the problem: slow, blue screen, no boot, error message? I will diagnose with offline tools." }
 )
 
-Write-Host "`n=== Crouton Alpha Offline Technician ===" -ForegroundColor Green
+Write-Host "`n=== AI Technician Offline Technician ===" -ForegroundColor Green
 Write-Host "Type your problem. Type 'exit' to quit. Commands: 'diagnose', 'yes', 'no'" -ForegroundColor Cyan
 
 function Call-LLM {
     param($msgs)
-    $body = @{ model="crouton-alpha"; messages=$msgs; temperature=$settings.agent.temperature; max_tokens=$settings.agent.maxTokens; stream=$false } | ConvertTo-Json -Depth 6
+    $body = @{ model="ai-technician"; messages=$msgs; temperature=$settings.agent.temperature; max_tokens=$settings.agent.maxTokens; stream=$false } | ConvertTo-Json -Depth 6
     try {
         $r = Invoke-RestMethod -Uri $base -Method Post -Body $body -ContentType "application/json" -TimeoutSec 120
         return $r.choices[0].message.content

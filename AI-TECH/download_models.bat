@@ -1,8 +1,8 @@
 @echo off
-title Crouton Alpha - Download Models (one-time)
+title AI Technician - Download Models (one-time)
 cd /d %~dp0
 echo ==========================================
-echo  Crouton Alpha Model Downloader
+echo  AI Technician Model Downloader
 echo  Internet needed ONCE, offline after.
 echo ==========================================
 echo.

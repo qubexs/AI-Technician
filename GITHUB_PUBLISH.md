@@ -15,7 +15,7 @@ git status
 Check status: should NOT show any .gguf, llama-server.exe, *.dll (see .gitignore).
 
 ```powershell
-git commit -m "Crouton Alpha: offline Windows technician USB"
+git commit -m "AI Technician: offline Windows technician USB"
 ```
 
 ## 2. Optional: Install Git LFS

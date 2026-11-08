@@ -1,6 +1,6 @@
 <div align="center">
 
-# Crouton Alpha
+# AI Technician
 
 **Offline Windows Technician USB — AI inside your bootable Windows 11 installer**
 

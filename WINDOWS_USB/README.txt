@@ -1,4 +1,4 @@
-Windows install media for Crouton Alpha - keep your existing Windows 11 installer.
+Windows install media for AI Technician - keep your existing Windows 11 installer.
 Do NOT delete EFI/ and sources/ if present.
 If you are cloning this repo to a USB, copy this folder structure alongside AI-TECH.
 Two partitions recommended (64GB USB):

@@ -1,4 +1,4 @@
-# Crouton Alpha - Offline Windows Technician USB (Intel/AMD, 4GB/8GB RAM)
+# AI Technician - Offline Windows Technician USB (Intel/AMD, 4GB/8GB RAM)
 
 ## What this does
 Turns your existing bootable Windows 11 installer USB into an offline AI repair tool.

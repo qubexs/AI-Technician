@@ -1,8 +1,8 @@
 @echo off
-title Crouton Alpha - Verify Offline Setup
+title AI Technician - Verify Offline Setup
 cd /d %~dp0
 echo ==========================================
-echo  Crouton Alpha - Pre-flight check
+echo  AI Technician - Pre-flight check
 echo ==========================================
 echo.
 set PASSED=0

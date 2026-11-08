@@ -1,7 +1,7 @@
-# build_usb_layout.ps1 - Helper to format USB for Crouton Alpha (DO NOT RUN until backup!)
+# build_usb_layout.ps1 - Helper to format USB for AI Technician (DO NOT RUN until backup!)
 param([string]$DriveLetter="F", [switch]$Force)
 
-Write-Host "=== Crouton Alpha USB Builder ===" -ForegroundColor Green
+Write-Host "=== AI Technician USB Builder ===" -ForegroundColor Green
 Write-Host "This script shows the layout and prepares AI-TECH. It does NOT format anything without -Force" -ForegroundColor Yellow
 
 if (-not $Force) {

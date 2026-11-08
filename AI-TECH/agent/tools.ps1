@@ -1,4 +1,4 @@
-# tools.ps1 - Allowlisted technician tools for Crouton Alpha
+# tools.ps1 - Allowlisted technician tools for AI Technician
 # All functions return a string result to feed back to the AI.
 
 function Write-ToolLog {
@@ -117,12 +117,12 @@ function Verify-SFCOnly {
 # ---- REPAIRS (require YES) ----
 
 function Create-RestorePoint {
-    return Run-CommandSafe "Enable-ComputerRestore -Drive 'C:\'; Checkpoint-Computer -Description 'Crouton Alpha Auto Backup' -RestorePointType 'MODIFY_SETTINGS'"
+    return Run-CommandSafe "Enable-ComputerRestore -Drive 'C:\'; Checkpoint-Computer -Description 'AI Technician Auto Backup' -RestorePointType 'MODIFY_SETTINGS'"
 }
 
 function Registry-Backup {
     $ts = Get-Date -Format 'yyyyMMdd_HHmmss'
-    $dest = "C:\CroutonBackup_$ts.reg"
+    $dest = "C:\AITechBackup_$ts.reg"
     return Run-CommandSafe "reg export HKLM $dest /y; echo Backup saved to $dest"
 }
 
