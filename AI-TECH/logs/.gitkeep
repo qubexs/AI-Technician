@@ -1,0 +1,4 @@
+AI-TECH/logs/ - runtime logs live here during operation (auto-created)
+agent.log: tool calls + repair confirmations
+llama-server.log: model load + generation diagnostics
+These logs are git-ignored. Safe to delete anytime.

@@ -1,0 +1,21 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "ctxSize": 2048,
+    "threads": 2,
+    "parallel": 1
+  },
+  "models": {
+    "ramThresholdGB": 2.5,
+    "small": "models\\qwen2.5-1.5b-instruct-q4_k_m.gguf",
+    "medium": "models\\qwen2.5-3b-instruct-q4_k_m.gguf"
+  },
+  "agent": {
+    "temperature": 0.3,
+    "maxTokens": 1024,
+    "autoRunDiagnostics": true,
+    "requireConfirmForRepair": true,
+    "logFile": "logs\\agent.log"
+  }
+}

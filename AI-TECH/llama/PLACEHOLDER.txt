@@ -1,0 +1,1 @@
+Download llama.cpp Windows CPU AVX2 release here. Must contain llama-server.exe
