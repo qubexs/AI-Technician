@@ -97,14 +97,16 @@ cd AI-Technician
 
 OSDeC requires a `.gov.my` or `.edu.my` gov email. If you have access:
 
+Namespace is `johar` for this project.
+
 1. Log in at https://git.osdec.gov.my/
 2. Create project: `AI-Technician` (copy URL)
 3. Add second remote in this repo:
 
 ```powershell
-git remote add osdec https://git.osdec.gov.my/<your-namespace>/AI-Technician.git
+git remote add osdec https://git.osdec.gov.my/johar/AI-Technician.git
 # or SSH:
-git remote add osdec git@git.osdec.gov.my:<your-namespace>/AI-Technician.git
+git remote add osdec git@git.osdec.gov.my:johar/AI-Technician.git
 git push osdec main
 # from now on, push both:
 git push origin main
