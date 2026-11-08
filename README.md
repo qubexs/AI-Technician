@@ -129,8 +129,8 @@ AI can only output JSON: `{"tool": "get_disk_smart", "params": {}}` — no inven
 
 ## GitHub Publishing
 
-> Repo: https://github.com/qubexs/AI-Technician (empty until first push)
-> Internal: https://git.osdec.gov.my/ (GitLab, .gov.my account only)
+> Public: https://github.com/qubexs/AI-Technician
+> Internal (OSDeC GitLab): https://git.osdec.gov.my/johar/AI-Technician
 
 Models are git-ignored. Publish code to repo, models to **Releases**:
 
