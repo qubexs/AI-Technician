@@ -29,11 +29,11 @@ USB \
 ```
 
 ## Download Checklist
-1. llama.cpp Windows CPU AVX2 release: https://github.com/ggerganov/llama.cpp/releases
+1. llama.cpp Windows CPU AVX2 release: https://github.com/ggml-org/llama.cpp/releases
    Extract to AI-TECH\llama\
-2. Model small: https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF or loracnnaa variant Q4_K_M
-3. Model medium: https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF Q4_K_M
-4. Tiny11 / Live Windows builder: https://github.com/xkelx314/Creator-Edition-Windows-11 (debloat) or Microsoft WinToUSB
+2. Model small: https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF - qwen2.5-1.5b-instruct-q4_k_m.gguf
+3. Model medium: https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF - qwen2.5-3b-instruct-q4_k_m.gguf
+4. Tiny11 / Live Windows via WinToUSB: https://www.easyuefi.com/enterprise/WinToUSB.html (install Tiny11 ISO to second partition)
 5. CrystalDiskInfo portable, HWiNFO portable
 6. DriverPack Solution offline or Samsung/Intel/AMD official driver folders
 

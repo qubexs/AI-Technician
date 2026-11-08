@@ -15,7 +15,7 @@ $models = @(
   @{
     Name = "qwen2.5-1.5b-instruct-q4_k_m.gguf"
     Url  = "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf"
-    Size ~1GB = $true
+    SizeGB = 1.0
     AltUrl = "https://huggingface.co/lmstudio-community/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf"
   },
   @{
@@ -67,8 +67,16 @@ if (-not $SkipLlama) {
     $releasesApi = "https://api.github.com/repos/ggml-org/llama.cpp/releases/latest"
     Write-Host "Querying latest llama.cpp release (CPU AVX2)..." -ForegroundColor Cyan
     try {
-      $rel = Invoke-RestMethod -Uri $releasesApi -Headers @{ "User-Agent"="CroutonAlpha" }
-      $asset = $rel.assets | Where-Object { $_.name -match 'win.*avx2.*\.zip$|.*windows.*cpu.*\.zip$' } | Select-Object -First 1
+      $rel = Invoke-RestMethod -Uri $releasesApi -Headers @{ "User-Agent"="AI-Technician" }
+      $asset = $rel.assets | Where-Object { $_.name -match 'bin-win-cpu.*\.zip$|.*win.*cpu.*\.zip$|.*windows.*cpu.*\.zip$' } | Select-Object -First 1
+      if (-not $asset) {
+        # v0.9.0 release JSON only has placeholder assets; nightly binaries live under tag b12110
+        # https://github.com/ggml-org/llama.cpp/releases/tag/b12110
+        Write-Host "No CPU zip in 'latest' release (v0.9.0). Falling back to nightly b12110." -ForegroundColor Yellow
+        $nightlyApi = "https://api.github.com/repos/ggml-org/llama.cpp/releases/tags/b12110"
+        $rel = Invoke-RestMethod -Uri $nightlyApi -Headers @{ "User-Agent"="AI-Technician" }
+        $asset = $rel.assets | Where-Object { $_.name -match 'bin-win-cpu-x64\.zip$|.*win.*cpu.*\.zip$' } | Select-Object -First 1
+      }
       if (-not $asset) { $asset = $rel.assets | Where-Object { $_.name -match '\.zip$' } | Select-Object -First 1 }
       if ($asset) {
         $zip = "$env:TEMP\$($asset.name)"
@@ -81,7 +89,7 @@ if (-not $SkipLlama) {
       } else { Write-Host "No zip asset found, download manually: https://github.com/ggml-org/llama.cpp/releases" -ForegroundColor Red }
     } catch {
       Write-Host "Failed to auto-download llama.cpp: $($_.Exception.Message)" -ForegroundColor Red
-      Write-Host "Manual: https://github.com/ggml-org/llama.cpp/releases -> download win-x64 AVX2 zip -> extract to $LlamaDir" -ForegroundColor Yellow
+      Write-Host "Manual: https://github.com/ggml-org/llama.cpp/releases/tag/b12110 -> download llama-b12110-bin-win-cpu-x64.zip -> extract to $LlamaDir" -ForegroundColor Yellow
     }
   }
 }

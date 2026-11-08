@@ -26,6 +26,12 @@ AI-TECH/drivers/*
 AI-TECH/tools/*
 !AI-TECH/tools/.gitkeep
 
+# Local release staging (assets uploaded to GitHub Releases, not committed)
+release/
+*.gguf
+*.zip
+!*.zip.example
+
 # Windows / IDE
 .vscode/
 .idea/

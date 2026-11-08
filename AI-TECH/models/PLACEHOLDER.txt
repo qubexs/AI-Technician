@@ -1,1 +1,0 @@
-Download Qwen2.5 1.5B and 3B Q4_K_M GGUF here. Filenames must match config/settings.json
